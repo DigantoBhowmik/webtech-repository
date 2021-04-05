@@ -51,3 +51,19 @@ function showData($id){
 
     return $data;
 }
+
+function updateData($id, $data){
+    $conn = db_conn();
+    $selectQuery = "UPDATE user set Name = ?, Username = ? where ID = ?";
+    try{
+        $stmt = $conn->prepare($selectQuery);
+        $stmt->execute([
+        	$data['name'], $data['username'], $id
+        ]);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    
+    $conn = null;
+    return true;
+}

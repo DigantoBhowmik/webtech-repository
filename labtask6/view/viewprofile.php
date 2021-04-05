@@ -22,7 +22,7 @@
       <ul class="nav nav-pills nav-stacked">
         <li><a href="dashboard.php">Home</a></li>
         <li class="active"><a href="viewprofile.php">View Profile</a></li>
-        <li><a href="community.php">Community</a></li>
+        <li><a href="editprofile.php">Edit Profile</a></li>
         
       </ul><br>
       
