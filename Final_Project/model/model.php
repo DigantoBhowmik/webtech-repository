@@ -57,11 +57,11 @@ function showData($id){
 
 function updateData($id, $data){
     $conn = db_conn();
-    $selectQuery = "UPDATE user set Name = ?, Username = ? where ID = ?";
+    $selectQuery = "UPDATE user set Name = ?, Email = ?, Username = ?, Gender = ?, DOB = ? where ID = ?";
     try{
         $stmt = $conn->prepare($selectQuery);
         $stmt->execute([
-        	$data['name'], $data['username'], $id
+        	$data['name'], $data['email'], $data['username'], $data['gender'], $data['dob'], $id
         ]);
     }catch(PDOException $e){
         echo $e->getMessage();
