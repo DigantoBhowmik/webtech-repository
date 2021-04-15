@@ -81,3 +81,10 @@ span.psw {
      width: 100%;
   }
 }
+.form-control.success input {
+	border-color: #2ecc71;
+}
+
+.form-control.error input {
+	border-color: #e74c3c;
+}
