@@ -29,7 +29,7 @@ function checkUsername() {
     }
     
   }
-
+ 
 function checkEmail() {
    
     if (document.getElementById("email").value == "") 
@@ -57,15 +57,15 @@ function checkEmail() {
    
     if (document.getElementById("password").value == "") 
     {
-          document.getElementById("passwordErr").innerHTML = "Password can't be blank";
-          document.getElementById("passwordErr").style.color = "black";
-          document.getElementById("password").style.borderColor = "red";
+        document.getElementById("passwordErr").innerHTML = "Password can't be blank";
+        document.getElementById("passwordErr").style.color = "black";
+        document.getElementById("password").style.borderColor = "red";
     }
     else if(!isPasword(document.getElementById("password").value))
     {
-        document.getElementById("passwordErr").innerHTML = "Password must contain at least one of the special character (@, #, $,%) and number";
-        document.getElementById("passwordErr").style.color = "black";
-        document.getElementById("password").style.borderColor = "red";
+      document.getElementById("passwordErr").innerHTML = "Password must contain at least one of the special character (@, #, $,%) and number";
+      document.getElementById("passwordErr").style.color = "black";
+      document.getElementById("password").style.borderColor = "red";
     }
     else
     {
@@ -97,5 +97,4 @@ function checkEmail() {
     }
     
   }
-
 

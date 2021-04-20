@@ -8,31 +8,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    
+    <script src="../js/app.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
 
 <div class="container-xxl">
 
-    <form class="row g-3"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+    <form class="row g-3"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name ="form">
     
     <span class="border border-primary rounded-sm shadow p-2 mb-3 bg-black rounded mt-5 pt-5" >
     
         <div class="col-md-6 offset-md-3">
         <label for="uname" class="form-label">Username</label>
-        <input type="text" class="form-control shadow p-2 mb-3 bg-black rounded" name="uname">
-        
+        <input type="text" class="form-control shadow p-2 mb-3 bg-black rounded" name="uname"  id= "username" onkeyup="checkUsername()" onblur="checkUsername()">
+                      <span id="usernameErr"></span>
+       
         </div>
         <div class="col-md-6 offset-md-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control shadow p-2 mb-3 bg-black rounded" name="password">
-        
-        <?php if(isset($msg)){?>
+        <input type="password" class="form-control shadow p-2 mb-3 bg-black rounded" name="password" id= "password" onkeyup="checkPassword()" onblur="checkPassword()">
+        <span id="passwordErr"><?php if(isset($msg)){?>
 		    <tr>
 		      <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
 		    </tr>
-    	<?php } ?>
+    	<?php } ?></span>
+        
         </div>
             
             <div class="col-md-6 offset-md-5">

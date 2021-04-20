@@ -7,6 +7,7 @@
   
    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <title>Edit Profile</title>
+    <script src="../js/app.js"></script>
 </head>
 <body>
     <?php include '../controller/header.php';?>
@@ -33,18 +34,20 @@
         
         <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form" method="POST">
+        <form class="form-horizontal" role="form" method="POST" name="form">
           <div class="form-group">
             <label class="col-lg-3 control-label">Name:</label>
             <div class="col-lg-8">
-              <input class="form-control" name = "name" type="text" value="<?php echo $name?>">
+              <input class="form-control" name = "name" type="text" id= "name" onkeyup="checkName()" onblur="checkName()" value="<?php echo $name?>">
+              <span id="nameErr"></span>
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" name = "email" type="text" value="<?php echo $email?>">
+              <input class="form-control" name = "email" type="text" value="<?php echo $email?>" id= "email" onkeyup="checkEmail()" onblur="checkEmail()">
+              <span id="emailErr"></span>
             </div>
           </div>
          
@@ -52,7 +55,8 @@
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
-              <input class="form-control" name = "username"type="text" value="<?php echo $username?>">
+              <input class="form-control" name = "username"type="text" value="<?php echo $username?>" id= "username" onkeyup="checkUsername()" onblur="checkUsername()">
+              <span id="usernameErr"></span>
             </div>
           </div>
 
