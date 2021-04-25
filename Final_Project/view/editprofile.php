@@ -100,3 +100,21 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        $('#username').keyup(function(){
+            var name = $(this).val();
+            $.ajax({
+                url: "../controller/check.php",
+                method:"POST",
+                data:{my_name:name},
+                dataType:"text",
+                success:function(html)
+                {
+                    $('#usernameErr').html(html);
+                }
+            });
+        });
+    });
+</script>

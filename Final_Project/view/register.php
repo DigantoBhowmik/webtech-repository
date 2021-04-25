@@ -28,7 +28,7 @@
                       <span id="emailErr"><?php echo $emailErr;?></span><br><hr>
                       <label>User Name:</label>  
                       <input type="text" name="username" class="form-control" id= "username" onkeyup="checkUsername()" onblur="checkUsername()">
-                      <span id="availability"></span><br><hr>
+                      <span id="usernameErr"></span><br><hr>
                       <label>Password:</label>  
                       <input type="password" name="password" class="form-control" id= "password" onkeyup="checkPassword()" onblur="checkPassword()">
                       <span id="passwordErr"><?php echo $passwordErr;?></span>
@@ -69,7 +69,7 @@
 
 <script>
     $(document).ready(function(){
-        $('#username').blur(function(){
+        $('#username').keyup(function(){
             var name = $(this).val();
             $.ajax({
                 url: "../controller/check.php",
@@ -78,7 +78,7 @@
                 dataType:"text",
                 success:function(html)
                 {
-                    $('#availability').html(html);
+                    $('#usernameErr').html(html);
                 }
             });
         });

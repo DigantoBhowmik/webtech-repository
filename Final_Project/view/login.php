@@ -22,7 +22,7 @@
         <div class="col-md-6 offset-md-3">
         <label for="uname" class="form-label">Username</label>
         <input type="text" class="form-control shadow p-2 mb-3 bg-black rounded" name="uname"  id= "username" onkeyup="checkUsername()" onblur="checkUsername()">
-                      <span id="usernameErr"></span>
+        <span id="usernameErr"></span>
        
         </div>
         <div class="col-md-6 offset-md-3">
