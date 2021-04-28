@@ -7,4 +7,4 @@
         echo $ok->poststat."<br>";
 
     }
-?>
+?
